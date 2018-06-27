@@ -1,2 +1,4 @@
 # MauticTestConfigBundle
-Plugn form Mautic.org for testing configuration setting
+Plugin for Mautic.org for testing configuration setting
+
+don't work for the moment
