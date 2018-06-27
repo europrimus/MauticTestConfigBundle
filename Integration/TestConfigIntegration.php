@@ -45,4 +45,10 @@ class TestConfigIntegration extends AbstractIntegration
             'TestConfig_string2' => 'mautic.integration.testconfig.string2',
         ];
     }
+    public function getSecretKeys()
+    {
+        return [
+            'TestConfig_Password' => 'mautic.integration.testconfig.password',
+        ];
+    }
 }
