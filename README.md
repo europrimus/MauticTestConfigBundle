@@ -10,12 +10,16 @@ Plugin for Mautic.org for testing configuration setting
 add this code in a controller (not tested elsewhere)
 
     // config from integration
-    /** @var \Mautic\PluginBundle\Helper\IntegrationHelper $helper */
-    $helper = $this->factory->getHelper('integration');
-    
-    /** @var  MauticPlugin\MauticWeezeventBundle\Integration\WeezeventIntegration $Weezevent */
-    $TestConfig = $helper->getIntegrationObject('TestConfig');
-    
+    /** @var  MauticPlugin\MauticWeezeventBundle\Integration\WeezeventIntegration $TestConfig */
+    $TestConfig = $this->factory->getHelper('integration')->getIntegrationObject('TestConfig');
+
     //retriving all keys
     /** @var Array $keys */
     $keys = $TestConfig->getKeys();
+
+    // mapping
+    /** @var Array $mapping */
+    $mapping=$TestConfig->getIntegrationSettings()->getFeatureSettings()["leadFields"];
+
+    /** @var Array $fieldsInfo */
+    $fieldsInfo = $TestConfig->getFormLeadFields();

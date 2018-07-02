@@ -51,4 +51,18 @@ class TestConfigIntegration extends AbstractIntegration
             'TestConfig_Password' => 'mautic.integration.testconfig.password',
         ];
     }
+
+    /**
+* return array for mapping
+* 'key'  => ['type' => 'string', 'label' => "field name", 'required' => true | false ]
+*
+*  @return array
+*/
+  public function getAvailableLeadFields($settings = [])
+  {
+    return [
+      'firstmapping'  => ['type' => 'string', 'label' => "1st mapping", 'required' => true ],
+      'lastmapping'   => ['type' => 'string', 'label' => "2nd mapping", 'required' => false ],
+    ];
+  }
 }
